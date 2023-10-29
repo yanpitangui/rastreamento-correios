@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <TieredPGO>true</TieredPGO>
+        <GarbageCollectionAdaptationMode>1</GarbageCollectionAdaptationMode>
+        <Features>InterceptorsPreview</Features>
+        <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Akka.Cluster.Hosting" Version="1.5.13" />
+        <PackageReference Include="Akka.Discovery" Version="1.5.13" />
+        <PackageReference Include="Akka.Discovery.Azure" Version="1.5.7" />
+        <PackageReference Include="Akka.HealthCheck.Cluster" Version="1.5.12" />
+        <PackageReference Include="Akka.Management" Version="1.5.7" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-rc.2.23480.2"/>
+        <PackageReference Include="Serilog" Version="3.0.1" />
+        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+        <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RastreamentoCorreios.Domain.Scraping\RastreamentoCorreios.Domain.Scraping.csproj" />
+      <ProjectReference Include="..\RastreamentoCorreios.Domain.PackageTracking\RastreamentoCorreios.Domain.PackageTracking.csproj" />
+    </ItemGroup>
+
+</Project>

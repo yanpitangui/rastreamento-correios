@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreamentoCorreios.Api", "src\RastreamentoCorreios.Api\RastreamentoCorreios.Api.csproj", "{210AB1C6-857A-4B92-A0DE-01A4FD8713F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{49A36916-A9EF-4997-BACD-594A223D5DD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F7F511AA-9C24-4723-952E-AF6C127BA53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreamentoCorreios.Domain.Scraping", "src\RastreamentoCorreios.Domain.Scraping\RastreamentoCorreios.Domain.Scraping.csproj", "{36C4F740-FF7E-4E97-9669-C79A8384DD8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreamentoCorreios.Domain.Common", "src\RastreamentoCorreios.Domain.Common\RastreamentoCorreios.Domain.Common.csproj", "{6B41FEEE-A875-491E-9114-0FA456FD2C88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreamentoCorreios.Domain.PackageTracking", "src\RastreamentoCorreios.Domain.PackageTracking\RastreamentoCorreios.Domain.PackageTracking.csproj", "{863BF4B6-085D-4712-A16B-3ACEC48F19EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{210AB1C6-857A-4B92-A0DE-01A4FD8713F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210AB1C6-857A-4B92-A0DE-01A4FD8713F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210AB1C6-857A-4B92-A0DE-01A4FD8713F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210AB1C6-857A-4B92-A0DE-01A4FD8713F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C4F740-FF7E-4E97-9669-C79A8384DD8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C4F740-FF7E-4E97-9669-C79A8384DD8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C4F740-FF7E-4E97-9669-C79A8384DD8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C4F740-FF7E-4E97-9669-C79A8384DD8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B41FEEE-A875-491E-9114-0FA456FD2C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B41FEEE-A875-491E-9114-0FA456FD2C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B41FEEE-A875-491E-9114-0FA456FD2C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B41FEEE-A875-491E-9114-0FA456FD2C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863BF4B6-085D-4712-A16B-3ACEC48F19EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863BF4B6-085D-4712-A16B-3ACEC48F19EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863BF4B6-085D-4712-A16B-3ACEC48F19EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863BF4B6-085D-4712-A16B-3ACEC48F19EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{210AB1C6-857A-4B92-A0DE-01A4FD8713F2} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
+		{36C4F740-FF7E-4E97-9669-C79A8384DD8B} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
+		{6B41FEEE-A875-491E-9114-0FA456FD2C88} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
+		{863BF4B6-085D-4712-A16B-3ACEC48F19EA} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
+	EndGlobalSection
+EndGlobal

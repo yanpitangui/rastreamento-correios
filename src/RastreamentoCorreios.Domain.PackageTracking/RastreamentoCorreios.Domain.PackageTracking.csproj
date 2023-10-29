@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RastreamentoCorreios.Domain.Common\RastreamentoCorreios.Domain.Common.csproj" />
+      <ProjectReference Include="..\RastreamentoCorreios.Domain.Scraping\RastreamentoCorreios.Domain.Scraping.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Akka.Cluster.Sharding" Version="1.5.13" />
+      <PackageReference Include="Akka.Persistence" Version="1.5.13" />
+    </ItemGroup>
+
+</Project>

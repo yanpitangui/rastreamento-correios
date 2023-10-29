@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Akka" Version="1.5.13" />
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.54" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RastreamentoCorreios.Domain.Common\RastreamentoCorreios.Domain.Common.csproj" />
+    </ItemGroup>
+
+</Project>
