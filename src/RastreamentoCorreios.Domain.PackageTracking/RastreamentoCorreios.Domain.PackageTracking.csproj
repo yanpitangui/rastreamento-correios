@@ -12,8 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Akka.Cluster.Sharding" Version="1.5.13" />
-      <PackageReference Include="Akka.Persistence" Version="1.5.13" />
+      <PackageReference Include="Akka.Cluster.Sharding" />
+      <PackageReference Include="Akka.Persistence" />
     </ItemGroup>
 
 </Project>

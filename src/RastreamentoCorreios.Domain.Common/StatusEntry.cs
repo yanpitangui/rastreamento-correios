@@ -9,8 +9,4 @@ public record StatusEntry
     public string Status { get; init; } = null!;
     
     public string? Place { get; init; }
-    
-    public string? Origin { get; init; }
-    
-    public string? Destination { get; init; }
 }

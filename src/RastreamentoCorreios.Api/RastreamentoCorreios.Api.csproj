@@ -12,17 +12,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Akka.Cluster.Hosting" Version="1.5.13" />
-        <PackageReference Include="Akka.Discovery" Version="1.5.13" />
-        <PackageReference Include="Akka.Discovery.Azure" Version="1.5.7" />
-        <PackageReference Include="Akka.HealthCheck.Cluster" Version="1.5.12" />
-        <PackageReference Include="Akka.Management" Version="1.5.7" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-rc.2.23480.2"/>
-        <PackageReference Include="Serilog" Version="3.0.1" />
-        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
-        <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
-        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <PackageReference Include="Akka.Cluster.Hosting"/>
+        <PackageReference Include="Akka.Discovery" />
+        <PackageReference Include="Akka.Discovery.Azure" />
+        <PackageReference Include="Akka.Management" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+        <PackageReference Include="Serilog" />
+        <PackageReference Include="Serilog.AspNetCore" />
+        <PackageReference Include="Serilog.Sinks.Async" />
+        <PackageReference Include="Serilog.Sinks.Console" />
+        <PackageReference Include="Swashbuckle.AspNetCore" />
     </ItemGroup>
 
     <ItemGroup>

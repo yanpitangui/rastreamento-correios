@@ -12,6 +12,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreamentoCorreios.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreamentoCorreios.Domain.PackageTracking", "src\RastreamentoCorreios.Domain.PackageTracking\RastreamentoCorreios.Domain.PackageTracking.csproj", "{863BF4B6-085D-4712-A16B-3ACEC48F19EA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{5307FE2B-F387-46FD-B89F-B880A42E360A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deps", "deps", "{C478B6F5-833B-4392-AC96-BFA960BD8ECE}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +47,6 @@ Global
 		{36C4F740-FF7E-4E97-9669-C79A8384DD8B} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
 		{6B41FEEE-A875-491E-9114-0FA456FD2C88} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
 		{863BF4B6-085D-4712-A16B-3ACEC48F19EA} = {49A36916-A9EF-4997-BACD-594A223D5DD8}
+		{C478B6F5-833B-4392-AC96-BFA960BD8ECE} = {5307FE2B-F387-46FD-B89F-B880A42E360A}
 	EndGlobalSection
 EndGlobal
