@@ -84,6 +84,23 @@ public static class PackageStateExtensions
                     History = packageUpdated.Entries,
                     LastSyncResponse = packageUpdated.Timestamp
                 };
+
+                if (state.LastStatus is null) break;
+                if (state.LastStatus.Status.Contains("ao destinatário", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    state = state with
+                    {
+                        Status = PackageStatus.Delivered
+                    };
+                }
+                // not sure if this is the correct string to compare
+                else if (state.LastStatus.Status.Contains("perdido", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    state = state with
+                    {
+                        Status = PackageStatus.Lost
+                    };
+                }
                 break;
             
             case PackageError error:
