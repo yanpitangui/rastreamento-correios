@@ -1,8 +1,6 @@
 using Akka.Actor;
-using Akka.Event;
 using Akka.Persistence;
 using RastreamentoCorreios.Domain.Common;
-using RastreamentoCorreios.Domain.Scraping;
 
 namespace RastreamentoCorreios.Domain.PackageTracking;
 
@@ -22,6 +20,21 @@ public sealed class PackageActor : ReceivePersistentActor, IWithTimers
             Status = PackageStatus.NotTracked
         };
         
+        
+        Recover<SnapshotOffer>(offer =>
+        {
+            if (offer.Snapshot is PackageState state)
+            {
+                _state = state;
+            }
+        });
+
+        Recover<IPackageEvent>(productEvent =>
+        {
+            _state = _state.ProcessEvent(productEvent);
+        });
+        
+        
         Command<PackageQueries.GetPackage>(t =>
         {
             Sender.Tell(_state);
@@ -30,27 +43,33 @@ public sealed class PackageActor : ReceivePersistentActor, IWithTimers
                 || 
                 // Allow to "force" sync again after 10 min of last request
                 (_state.LastSyncRequest is not null
-                && _state.LastSyncRequest.Value.AddMinutes(10) > DateTimeOffset.Now)
+                && _state.LastSyncRequest.Value.AddMinutes(10) < DateTimeOffset.Now)
                 && _state.Status is not (PackageStatus.Delivered or PackageStatus.Lost))
             {
                 Self.Tell(new PackageCommands.Track(_state.PackageCode));
-                _state = _state with { LastSyncRequest = DateTimeOffset.Now, Status = PackageStatus.Tracking };
             }
         });
 
         
-        Command<PackageCommands.Track>(t =>
+        Command<IPackageCommand>(cmd =>
         {
-            scraperWorkerPool.Tell(new ScraperCommands.ScrapePackage(t.TrackingCode));
-        });
+            var response = _state.ProcessCommand(cmd, scraperWorkerPool);
 
-        Command<List<StatusEntry>>(p =>
-        {
-            _state = _state with
+            if (response.Events.Count > 0)
             {
-                History = p.ToList(),
-                LastSyncResponse = DateTimeOffset.Now
-            };
+                PersistAll(response.Events, packageEvent =>
+                {
+                    _state = _state.ProcessEvent(packageEvent);
+                
+                    if(LastSequenceNr % 10 == 0)
+                        SaveSnapshot(_state);
+                });
+            }
+        });
+        
+        Command<SaveSnapshotSuccess>(success =>
+        {
+            
         });
     }
     
@@ -59,23 +78,3 @@ public sealed class PackageActor : ReceivePersistentActor, IWithTimers
     public ITimerScheduler Timers { get; set; }
 }
 
-public record PackageState
-{
-    public PackageStatus Status { get; init; }
-    public required string PackageCode { get; init; }
-    public List<StatusEntry> History { get; init; } = new();
-    
-    public DateTimeOffset? LastSyncRequest { get; init; }
-    public DateTimeOffset? LastSyncResponse { get; init; }
-
-    public StatusEntry? LastStatus => History.FirstOrDefault();
-}
-
-public enum PackageStatus
-{
-    NotTracked,
-    Tracking,
-    Delivered,
-    Lost,
-    NotFound
-}

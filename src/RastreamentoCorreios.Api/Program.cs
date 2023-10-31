@@ -7,6 +7,7 @@ using RastreamentoCorreios.Api;
 using RastreamentoCorreios.Domain.PackageTracking;
 using RastreamentoCorreios.Domain.Scraping;
 using Serilog;
+using Unchase.Swashbuckle.AspNetCore.Extensions.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,10 @@ var logger = new LoggerConfiguration()
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(u =>
+{
+    u.AddEnumsWithValuesFixFilters(o => o.IncludeDescriptions = true);
+});
 builder.Services.ConfigureHttpJsonOptions(o =>
 {
     o.SerializerOptions.Converters.Add(new JsonStringEnumConverter());

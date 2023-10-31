@@ -33,8 +33,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-
-
+    <PackageVersion Include="Unchase.Swashbuckle.AspNetCore.Extensions" Version="2.7.1" />
   </ItemGroup>
   <!--  Test packages-->
   <ItemGroup>
